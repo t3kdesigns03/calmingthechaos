@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://t3kdesigns03.github.io/calmingthechaos/sitemap.xml

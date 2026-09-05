@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Calming The Chaos emblem">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#0B2A4A"/><stop offset="1" stop-color="#04101f"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6DE8B"/><stop offset=".45" stop-color="#D4AF37"/><stop offset="1" stop-color="#C9A227"/>
+    </linearGradient>
+    <linearGradient id="goldhi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFF4CC"/><stop offset="1" stop-color="#E7C24D"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6AF0FF"/><stop offset="1" stop-color="#3AA6C9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="46%" r="55%">
+      <stop offset="0" stop-color="#3EE0FF" stop-opacity=".55"/><stop offset="1" stop-color="#3EE0FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="240" r="180" fill="url(#glow)"/>
+  <!-- particle dust -->
+  <g fill="#F3D06A" opacity=".7">
+    <circle cx="120" cy="140" r="3"/><circle cx="400" cy="170" r="2.4"/><circle cx="150" cy="360" r="2.4"/>
+    <circle cx="390" cy="360" r="3"/><circle cx="256" cy="70" r="2"/><circle cx="90" cy="250" r="2"/><circle cx="430" cy="270" r="2"/>
+  </g>
+  <!-- sphere -->
+  <circle cx="256" cy="240" r="150" fill="none" stroke="url(#gold)" stroke-width="12"/>
+  <!-- yin-yang gold swoosh -->
+  <path d="M256 90 a75 75 0 0 1 0 150 a75 75 0 0 0 0 150 a150 150 0 0 1 0 -300 Z" fill="url(#gold)" opacity=".92"/>
+  <circle cx="256" cy="165" r="26" fill="#04101f"/>
+  <circle cx="256" cy="165" r="11" fill="url(#goldhi)"/>
+  <circle cx="256" cy="315" r="11" fill="#04101f"/>
+  <!-- wifi / radio waves -->
+  <g fill="none" stroke="url(#cyan)" stroke-width="14" stroke-linecap="round">
+    <path d="M196 268 a85 85 0 0 1 120 0" opacity=".95"/>
+    <path d="M168 296 a125 125 0 0 1 176 0" opacity=".7"/>
+  </g>
+  <circle cx="256" cy="286" r="15" fill="url(#cyan)"/>
+</svg>
