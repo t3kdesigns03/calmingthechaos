@@ -139,6 +139,38 @@
     });
   }
 
+  /* ---------- shop chip bar scroll-spy ---------- */
+  var chipbar = $(".chipbar[data-scrollspy]");
+  if (chipbar) {
+    var chips = $$(".chip", chipbar);
+    var map = {};
+    chips.forEach(function (c) {
+      var id = (c.getAttribute("href") || "").replace("#", "");
+      if (id) map[id] = c;
+    });
+    var setActive = function (id) {
+      chips.forEach(function (c) { c.classList.remove("active"); });
+      if (map[id]) {
+        map[id].classList.add("active");
+        // keep the active chip in view on the mobile scroller
+        if (map[id].scrollIntoView) map[id].scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+      }
+    };
+    var sections = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    if ("IntersectionObserver" in window && sections.length) {
+      var spy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) setActive(en.target.id); });
+      }, { rootMargin: "-40% 0px -55% 0px", threshold: 0 });
+      sections.forEach(function (s) { spy.observe(s); });
+    }
+    chips.forEach(function (c) {
+      c.addEventListener("click", function () {
+        setActive((c.getAttribute("href") || "").replace("#", ""));
+      });
+    });
+    setActive(Object.keys(map)[0]);
+  }
+
   /* ---------- year ---------- */
   $$(".js-year").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
