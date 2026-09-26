@@ -46,6 +46,16 @@ export const products = [
   {
     slug: "home-harmonizer", name: "Home Harmonizer", subtitle: "Upgraded for Fiber",
     icon: "box", collection: "home", tag: "Flagship",
+    image: "assets/img/products/home-harmonizer/01.png",
+    gallery: [
+      "assets/img/products/home-harmonizer/01.png",
+      "assets/img/products/home-harmonizer/02.jpg",
+      "assets/img/products/home-harmonizer/03.jpg",
+      "assets/img/products/home-harmonizer/04.jpg",
+      "assets/img/products/home-harmonizer/05.jpg",
+      "assets/img/products/home-harmonizer/06.jpg",
+      "assets/img/products/home-harmonizer/07.jpg",
+    ],
     job: "Harmonizes the environmental field of your entire home — from the wiring inside the walls to the wireless weather outside.",
     whoFor: "Any house or building. The foundation piece almost every space begins with.",
     coverage: "About one per 2,500 sq ft.",
@@ -63,6 +73,14 @@ export const products = [
   {
     slug: "booster-box", name: "Booster Box", subtitle: "For larger or harder spaces",
     icon: "box", collection: "home", tag: "Companion",
+    image: "assets/img/products/booster-box/01.jpg",
+    gallery: [
+      "assets/img/products/booster-box/01.jpg",
+      "assets/img/products/booster-box/02.jpg",
+      "assets/img/products/booster-box/03.jpg",
+      "assets/img/products/booster-box/04.jpg",
+      "assets/img/products/booster-box/05.jpg",
+    ],
     job: "A half-strength companion that adds reach to your Home Harmonizer in bigger or more challenging homes.",
     whoFor: "Homes over ~2,500 sq ft, or with a metal roof, solar array, or a nearby tower.",
     coverage: "Pairs with a Home Harmonizer.",
@@ -78,6 +96,15 @@ export const products = [
   {
     slug: "room-harmonizer", name: "Room Harmonizer", subtitle: "Upgraded for Fiber",
     icon: "room", collection: "home", tag: "Single space",
+    image: "assets/img/products/room-harmonizer/01.jpg",
+    gallery: [
+      "assets/img/products/room-harmonizer/01.jpg",
+      "assets/img/products/room-harmonizer/02.jpg",
+      "assets/img/products/room-harmonizer/03.jpg",
+      "assets/img/products/room-harmonizer/04.jpg",
+      "assets/img/products/room-harmonizer/05.jpg",
+      "assets/img/products/room-harmonizer/06.jpg",
+    ],
     job: "Brings one room into harmony — ideal where you can’t reach a main electrical panel.",
     whoFor: "A bedroom, a rented apartment, a hotel room, a condo, a cubicle, or a dorm.",
     coverage: "One room or zone.",
@@ -93,6 +120,12 @@ export const products = [
   {
     slug: "better-zzzs", name: "Better ZZZ’s", subtitle: "For the sleep zone",
     icon: "sleep", collection: "sleep", tag: "Sleep",
+    image: "assets/img/products/better-zzzs/01.jpg",
+    gallery: [
+      "assets/img/products/better-zzzs/01.jpg",
+      "assets/img/products/better-zzzs/02.jpg",
+      "assets/img/products/better-zzzs/03.jpg",
+    ],
     job: "A dedicated piece for the bed — placed at the sleep zone to help the space where you rest feel calm.",
     whoFor: "Anyone who wants their bedroom to feel like a true retreat. Many customers reach for this one first.",
     coverage: "One per sleeping area.",
@@ -109,6 +142,13 @@ export const products = [
   {
     slug: "emf-band", name: "EMF Band", subtitle: "Upgraded for Fiber",
     icon: "band", collection: "body", tag: "Wearable",
+    image: "assets/img/products/emf-band/01.png",
+    gallery: [
+      "assets/img/products/emf-band/01.png",
+      "assets/img/products/emf-band/02.jpg",
+      "assets/img/products/emf-band/03.jpg",
+      "assets/img/products/emf-band/04.jpg",
+    ],
     job: "A hand-finished band that carries a calmer personal field with you through the day.",
     whoFor: "Everyday wear for adults and kids. The simplest way to bring harmony off the property line and onto the body.",
     coverage: "One per person.",
@@ -124,6 +164,14 @@ export const products = [
   {
     slug: "emf-band-xl", name: "EMF Band XL", subtitle: "Upgraded for Fiber",
     icon: "bandxl", collection: "body", tag: "Stronger",
+    image: "assets/img/products/emf-band-xl/01.jpg",
+    gallery: [
+      "assets/img/products/emf-band-xl/01.jpg",
+      "assets/img/products/emf-band-xl/02.jpg",
+      "assets/img/products/emf-band-xl/03.jpg",
+      "assets/img/products/emf-band-xl/04.jpg",
+      "assets/img/products/emf-band-xl/05.png",
+    ],
     job: "The stronger personal band — more presence for those who want the most robust wearable.",
     whoFor: "Adults who want the strongest personal piece, larger wrists, or higher-exposure days.",
     coverage: "One per person.",
@@ -139,6 +187,12 @@ export const products = [
   {
     slug: "personal-card-ultra", name: "Personal Card Ultra", subtitle: "Pocket & bag",
     icon: "card", collection: "body", tag: "Upgraded",
+    image: "assets/img/products/personal-card-ultra/01.jpg",
+    gallery: [
+      "assets/img/products/personal-card-ultra/01.jpg",
+      "assets/img/products/personal-card-ultra/02.jpg",
+      "assets/img/products/personal-card-ultra/03.jpg",
+    ],
     job: "A slim, upgraded card that tucks into a wallet, pocket, or bag to carry harmony discreetly.",
     whoFor: "Anyone who prefers not to wear a band, or who wants a second personal piece for a purse or backpack.",
     coverage: "One per person or bag.",
@@ -154,6 +208,15 @@ export const products = [
   {
     slug: "cell-chip-ultra", name: "Cell Chip Ultra", subtitle: "For most phones",
     icon: "phone", collection: "device", tag: "Phone",
+    image: "assets/img/products/cell-chip-ultra/01.png",
+    gallery: [
+      "assets/img/products/cell-chip-ultra/01.png",
+      "assets/img/products/cell-chip-ultra/02.png",
+      "assets/img/products/cell-chip-ultra/03.jpg",
+      "assets/img/products/cell-chip-ultra/04.jpg",
+      "assets/img/products/cell-chip-ultra/05.jpg",
+      "assets/img/products/cell-chip-ultra/06.jpg",
+    ],
     job: "The upgraded chip for the phone in your hand all day — for every phone except MagSafe iPhones.",
     whoFor: "Android phones and all iPhones before the iPhone 12. (MagSafe iPhone 12 and later use the iCell Ultra.)",
     coverage: "One per phone.",
@@ -169,6 +232,15 @@ export const products = [
   {
     slug: "icell-ultra", name: "iCell Ultra", subtitle: "For MagSafe iPhones",
     icon: "iphone", collection: "device", tag: "iPhone 12+",
+    image: "assets/img/products/icell-ultra/01.png",
+    gallery: [
+      "assets/img/products/icell-ultra/01.png",
+      "assets/img/products/icell-ultra/02.png",
+      "assets/img/products/icell-ultra/03.jpg",
+      "assets/img/products/icell-ultra/04.jpg",
+      "assets/img/products/icell-ultra/05.jpg",
+      "assets/img/products/icell-ultra/06.jpg",
+    ],
     job: "The chip designed for MagSafe — required for iPhone 12 and later, and works on earlier iPhones too.",
     whoFor: "iPhone 12 and newer (MagSafe). Also compatible with earlier iPhones.",
     coverage: "One per phone.",
@@ -184,6 +256,14 @@ export const products = [
   {
     slug: "laptop-chip-ultra", name: "Laptop Chip Ultra", subtitle: "Two per device",
     icon: "laptop", collection: "device", tag: "Two-pack",
+    image: "assets/img/products/laptop-chip-ultra/01.jpg",
+    gallery: [
+      "assets/img/products/laptop-chip-ultra/01.jpg",
+      "assets/img/products/laptop-chip-ultra/02.png",
+      "assets/img/products/laptop-chip-ultra/03.png",
+      "assets/img/products/laptop-chip-ultra/04.png",
+      "assets/img/products/laptop-chip-ultra/05.png",
+    ],
     job: "An upgraded chip set for the laptop, tablet, or desktop you work on — two chips per device.",
     whoFor: "Anyone who spends real hours at a laptop, tablet, or PC — especially with today’s always-connected, AI-era workloads.",
     coverage: "Two chips per computer.",
@@ -199,6 +279,17 @@ export const products = [
   {
     slug: "device-chip", name: "Device Chip", subtitle: "For the always-on things",
     icon: "router", collection: "device", tag: "Versatile",
+    image: "assets/img/products/device-chip/01.jpg",
+    gallery: [
+      "assets/img/products/device-chip/01.jpg",
+      "assets/img/products/device-chip/02.jpg",
+      "assets/img/products/device-chip/03.jpg",
+      "assets/img/products/device-chip/04.jpg",
+      "assets/img/products/device-chip/05.jpg",
+      "assets/img/products/device-chip/06.jpg",
+      "assets/img/products/device-chip/07.jpg",
+      "assets/img/products/device-chip/08.jpg",
+    ],
     job: "The versatile chip for everything else that broadcasts — routers, TVs, speakers, monitors, and more.",
     whoFor: "Routers and Wi-Fi extenders, smart TVs, printers, Alexa/Google speakers, gaming consoles, baby monitors, and plug-in adjustable beds.",
     coverage: "One per device.",
@@ -214,6 +305,13 @@ export const products = [
   {
     slug: "car-harmonizer", name: "Car Harmonizer", subtitle: "12V plug-in",
     icon: "car", collection: "car", tag: "Vehicle",
+    image: "assets/img/products/car-harmonizer/01.jpg",
+    gallery: [
+      "assets/img/products/car-harmonizer/01.jpg",
+      "assets/img/products/car-harmonizer/02.jpg",
+      "assets/img/products/car-harmonizer/03.jpg",
+      "assets/img/products/car-harmonizer/04.jpg",
+    ],
     job: "Plugs into your 12V outlet to bring a calmer field to the sealed metal cabin you commute in.",
     whoFor: "Any car, truck, or SUV. A must for long commutes and road trips.",
     coverage: "One per vehicle (some hybrids/EVs use two).",
@@ -229,6 +327,14 @@ export const products = [
   {
     slug: "armored-upgrade", name: "Armored Upgrade", subtitle: "Fiber-era booster",
     icon: "armor", collection: "upgrade", tag: "Upgrade",
+    image: "assets/img/products/armored-upgrade/01.jpg",
+    gallery: [
+      "assets/img/products/armored-upgrade/01.jpg",
+      "assets/img/products/armored-upgrade/02.png",
+      "assets/img/products/armored-upgrade/03.jpg",
+      "assets/img/products/armored-upgrade/04.jpg",
+      "assets/img/products/armored-upgrade/05.jpg",
+    ],
     job: "An add-on chip that brings older Home Harmonizers up to current, fiber-era strength.",
     whoFor: "Anyone with a Home Harmonizer from before the April 2026 fiber-era update.",
     coverage: "One per 2,500 sq ft.",
@@ -244,6 +350,11 @@ export const products = [
   {
     slug: "xl-band-face-replacement", name: "XL Band Face Replacement", subtitle: "Keep your XL current",
     icon: "face", collection: "upgrade", tag: "Replacement",
+    image: "assets/img/products/xl-band-face-replacement/01.jpg",
+    gallery: [
+      "assets/img/products/xl-band-face-replacement/01.jpg",
+      "assets/img/products/xl-band-face-replacement/02.jpg",
+    ],
     job: "A fresh face for your EMF Band XL, so a well-loved band can be renewed rather than replaced.",
     whoFor: "EMF Band XL owners refreshing a worn face or updating to the latest version.",
     coverage: "One face per XL band.",
@@ -259,6 +370,10 @@ export const products = [
   {
     slug: "xl-band-alternative-nylon-band", name: "XL Band — Nylon Strap", subtitle: "Alternative band",
     icon: "nylon", collection: "upgrade", tag: "Strap",
+    image: "assets/img/products/xl-band-alternative-nylon-band/01.jpg",
+    gallery: [
+      "assets/img/products/xl-band-alternative-nylon-band/01.jpg",
+    ],
     job: "A breathable nylon strap for silicone-sensitive skin or larger wrists.",
     whoFor: "EMF Band XL owners who prefer nylon, have sensitive skin, or need a longer fit.",
     coverage: "One strap.",
@@ -274,6 +389,10 @@ export const products = [
   {
     slug: "xl-band-replacement-silicone-band", name: "XL Band — Silicone Strap", subtitle: "Replacement band",
     icon: "silicone", collection: "upgrade", tag: "Strap",
+    image: "assets/img/products/xl-band-replacement-silicone-band/01.jpg",
+    gallery: [
+      "assets/img/products/xl-band-replacement-silicone-band/01.jpg",
+    ],
     job: "A fresh silicone strap to keep your EMF Band XL comfortable and looking its best.",
     whoFor: "EMF Band XL owners replacing a worn silicone strap.",
     coverage: "One strap.",
@@ -289,6 +408,16 @@ export const products = [
   {
     slug: "home-bundle", name: "Home Bundle", subtitle: "A calm starting kit",
     icon: "bundle", collection: "bundle", tag: "Best start",
+    image: "assets/img/products/home-bundle/01.jpg",
+    gallery: [
+      "assets/img/products/home-bundle/01.jpg",
+      "assets/img/products/home-bundle/02.jpg",
+      "assets/img/products/home-bundle/03.jpg",
+      "assets/img/products/home-bundle/04.jpg",
+      "assets/img/products/home-bundle/05.jpg",
+      "assets/img/products/home-bundle/06.jpg",
+      "assets/img/products/home-bundle/07.jpg",
+    ],
     job: "The core trio for a typical home — Home Harmonizer, a Device Chip, and Better ZZZ’s, chosen to work together.",
     whoFor: "A typical single-family home ready to begin with confidence.",
     coverage: "Covers a typical home’s foundation.",
@@ -305,6 +434,14 @@ export const products = [
   {
     slug: "bare-minimum", name: "Bare Minimum", subtitle: "The essentials, thoughtfully",
     icon: "bundle", collection: "bundle", tag: "Essentials",
+    image: "assets/img/products/bare-minimum/01.jpg",
+    gallery: [
+      "assets/img/products/bare-minimum/01.jpg",
+      "assets/img/products/bare-minimum/02.jpg",
+      "assets/img/products/bare-minimum/03.jpg",
+      "assets/img/products/bare-minimum/04.jpg",
+      "assets/img/products/bare-minimum/05.jpg",
+    ],
     job: "A lean starting set — a Room Harmonizer, a phone chip, and a personal piece — for a single room or a first step.",
     whoFor: "Renters, students, travelers, or anyone taking a considered first step.",
     coverage: "One room plus your phone and body.",
