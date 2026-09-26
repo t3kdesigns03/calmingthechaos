@@ -1,9 +1,10 @@
-import { mkdirSync, writeFileSync, cpSync } from "node:fs";
+import { mkdirSync, writeFileSync, cpSync, existsSync } from "node:fs";
+import { resolve } from "node:path";
 import { site, nav, collections, products, byId, testimonials, faqs, disclaimerFull, disclaimerShort } from "./lib/data.mjs";
 import { plate, icon } from "./lib/svg.mjs";
 import { page, productCard, productHref, base } from "./lib/layout.mjs";
 
-const OUT = new URL("../site/", import.meta.url).pathname;
+const OUT = process.env.CTC_OUT ? resolve(process.env.CTC_OUT) + "/" : new URL("../site/", import.meta.url).pathname;
 mkdirSync(OUT, { recursive: true });
 mkdirSync(OUT + "products/", { recursive: true });
 
@@ -208,6 +209,28 @@ ${ctaBand(0)}
 /* ============================================================
    PRODUCT DETAIL
    ============================================================ */
+/* Product page media: photo stage + thumbnail strip, or the SVG plate when there are no photos. */
+function productGallery(p) {
+  const fallback = `<div class="glow"></div>
+        ${plate[p.icon] || plate.box}`;
+  const g = p.gallery && p.gallery.length ? p.gallery : p.image ? [p.image] : [];
+  if (!g.length) return `<div class="pd-media" data-reveal>
+        ${fallback}
+      </div>`;
+  const n = g.length;
+  const alt = (i) => (n > 1 ? `${p.name} — photo ${i + 1} of ${n}` : p.name);
+  const thumbs = n > 1 ? `
+        <div class="pd-thumbs" role="group" aria-label="${p.name} photos">
+          ${g.map((src, i) => `<button type="button" class="pd-thumb${i ? "" : " is-active"}"${i ? "" : ' aria-current="true"'} aria-label="Show photo ${i + 1} of ${n}" data-src="../${src}" data-alt="${alt(i)}"><img src="../${src}" alt="" width="120" height="120" loading="lazy" decoding="async"></button>`).join("\n          ")}
+        </div>` : "";
+  return `<div class="pd-gallery" data-reveal>
+        <div class="pd-media">
+          <img class="pphoto pd-main" src="../${g[0]}" alt="${alt(0)}" width="1000" height="1000" fetchpriority="high" decoding="async" onerror="this.remove()">
+          ${fallback}
+        </div>${thumbs}
+      </div>`;
+}
+
 function productPage(p) {
   const coll = collections.find((c) => c.id === p.collection);
   const pairs = (p.pairs || []).map((s) => byId[s]).filter(Boolean);
@@ -217,7 +240,7 @@ function productPage(p) {
     name: p.name, description: p.seo,
     brand: { "@type": "Brand", name: "EMF Solutions" },
     category: coll ? coll.eyebrow : "EMF harmonizer",
-    image: site.url + "/assets/img/og-banner.png",
+    image: (p.gallery && p.gallery.length ? p.gallery : [p.image || "assets/img/og-banner.png"]).map((g) => site.url + "/" + g),
     offers: { "@type": "Offer", priceCurrency: "USD", availability: "https://schema.org/InStock", seller: { "@type": "Organization", name: site.name }, url: site.url + "/products/" + p.slug + ".html" },
   };
   const main = `
@@ -227,10 +250,7 @@ function productPage(p) {
       <a href="../index.html">Home</a> / <a href="../shop.html">Shop</a> / <a href="../shop.html#${p.collection}">${coll ? coll.eyebrow : "Products"}</a> / <span>${p.name}</span>
     </nav>
     <div class="pd">
-      <div class="pd-media" data-reveal>
-        <div class="glow"></div>
-        ${plate[p.icon] || plate.box}
-      </div>
+      ${productGallery(p)}
       <div data-reveal>
         <div class="who-for">${coll ? coll.eyebrow : ""}</div>
         <h1>${p.name}</h1>
@@ -651,5 +671,11 @@ write(".nojekyll", "");
 
 /* copy static assets */
 cpSync(new URL("./assets/", import.meta.url).pathname, OUT + "assets/", { recursive: true });
+// product photos live at the deployed path (repo-root assets/img/products/) — copy them in
+// when building somewhere other than the repo root
+const PHOTOS = new URL("../assets/img/products/", import.meta.url).pathname;
+if (existsSync(PHOTOS) && resolve(PHOTOS) !== resolve(OUT + "assets/img/products/")) {
+  cpSync(PHOTOS, OUT + "assets/img/products/", { recursive: true });
+}
 
 console.log("Built " + (8 + 1 + products.length) + " pages + " + products.length + " products. Output: " + OUT);

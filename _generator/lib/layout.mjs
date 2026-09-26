@@ -116,9 +116,18 @@ export function scripts(depth = 0) {
 }
 
 /* ---------- reusable blocks ---------- */
+const escAttr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+
+/* Hero photo (local, from the parent catalog) over the SVG plate; the plate is the fallback. */
+export function productPhoto(p, depth = 0) {
+  return p.image
+    ? `<img class="pphoto plate-photo" src="${asset(depth, p.image)}" alt="${escAttr(p.name)}" width="800" height="600" loading="lazy" decoding="async" onerror="this.remove()">`
+    : "";
+}
+
 export function productCard(p, depth = 0) {
   return `<a class="card lift pcard" href="${productHref(depth, p.slug)}" aria-label="${p.name}">
-    <div class="plate">${p.tag ? `<span class="tag">${p.tag}</span>` : ""}${plate[p.icon] || plate.box}</div>
+    <div class="plate">${productPhoto(p, depth)}${p.tag ? `<span class="tag">${p.tag}</span>` : ""}${plate[p.icon] || plate.box}</div>
     <div class="pbody">
       <h3>${p.name}</h3>
       ${p.subtitle ? `<div class="who-for" style="color:var(--gold-foil);margin-bottom:8px">${p.subtitle}</div>` : ""}

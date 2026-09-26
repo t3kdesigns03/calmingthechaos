@@ -1,54 +1,49 @@
 CALMING THE CHAOS — PRODUCT PHOTOS
 ==================================
 
-Every product tile and product-page hero is already wired to a local image at:
-    assets/img/products/<slug>.webp
+These are the EMF Solutions (parent catalog) product photos, hosted locally so the
+live site never hotlinks emfsol.com.
 
-Until a file exists, the tile automatically falls back to the current gold/teal
-icon plate (the <img> removes itself on error). So you can drop files in over
-time, in any order, WITHOUT editing any HTML.
+LAYOUT
+------
+    assets/img/products/<slug>/01.<ext>   ← hero: shop cards, home features, Start Here, "pairs with"
+    assets/img/products/<slug>/02.<ext>   ← the rest of the product-page gallery, in parent order
+    ...
+    assets/img/products/manifest.json     ← { "<slug>": ["01.png", "02.jpg", ...] }
 
-HOW TO ADD A PHOTO
-------------------
-1. Open the matching product page on emfsol.com.
-2. Save a GALLERY still of the physical object only — box on white, band on a
-   wrist, chip close-up, strap, car plug, etc.
-   • Do NOT use the stamped marketing slides (red "UPGRADED & VITAL",
-     green "Add to cart", their logo lockup). Crop out any arrows/stamps.
-   • Only use images you have permission to use as an authorized seller.
-3. Crop tight and square-ish, remove overlays in an editor if needed.
-4. Export WebP, longest side ~1200px, target 40–90 KB.
-   (Optional: also drop a same-name .png as a fallback — not required.)
-5. Name it exactly <slug>.webp from the list below and drop it in this folder.
-6. Commit + push. Netlify rebuilds and the photo appears on the shop tile
-   AND the product page automatically.
+Original files and extensions are kept as the parent publishes them.
 
-The plate uses object-fit: cover on a baby-blue background, so a clean
-white-background still or a lifestyle still both look right.
+UPDATE / RE-SYNC
+----------------
+From Git Bash:
+    cd _generator
+    node pull-emfsol-images.mjs
 
-SLUG LIST (filename  →  product)
---------------------------------
-home-harmonizer.webp                 → Home Harmonizer
-booster-box.webp                     → Booster Box
-room-harmonizer.webp                 → Room Harmonizer
-better-zzzs.webp                     → Better ZZZ’s
-emf-band.webp                        → EMF Band
-emf-band-xl.webp                     → EMF Band XL
-personal-card-ultra.webp             → Personal Card Ultra
-cell-chip-ultra.webp                 → Cell Chip Ultra
-icell-ultra.webp                     → iCell Ultra
-laptop-chip-ultra.webp               → Laptop Chip Ultra
-device-chip.webp                     → Device Chip
-car-harmonizer.webp                  → Car Harmonizer
-armored-upgrade.webp                 → Armored Upgrade
-xl-band-face-replacement.webp        → XL Band Face Replacement
-xl-band-alternative-nylon-band.webp  → XL Band Alternative Nylon Band
-xl-band-replacement-silicone-band.webp → XL Band Replacement Silicone Band
-home-bundle.webp                     → Home Bundle  (group shot of the trio)
-bare-minimum.webp                    → Bare Minimum (starter set shot)
+That downloads anything new or changed, rewrites manifest.json, updates
+_generator/lib/data.mjs and re-wires every card and product-page gallery. Then
+commit + push as usual. Re-running is safe.
 
-NOTES
------
-• No hotlinking to emfsol.com — always host the file here.
-• If a clean still doesn’t exist for a SKU, just leave it: that tile keeps the
-  branded icon plate, which looks intentional.
+CHANGING A HERO
+---------------
+The hero is always 01.*. To use a different shot on the cards, swap the file
+names (e.g. rename 01.png ↔ 03.jpg), list the new order in manifest.json, and run
+    node apply-product-photos.mjs
+(A later pull-emfsol-images.mjs run goes back to the parent's order.)
+
+FALLBACK
+--------
+A product with no photos keeps its gold/teal SVG plate. Any photo that fails to
+load removes itself and the plate shows through.
+
+SLUGS (CTC ← EMF Solutions)
+---------------------------
+home-harmonizer ← home-harmonizer            car-harmonizer ← car-harmonizer
+booster-box ← booster-box                    armored-upgrade ← armored-upgrade
+room-harmonizer ← room-harmonizer            xl-band-face-replacement ← xl-band-face-replacement
+better-zzzs ← better-zzzs                    xl-band-alternative-nylon-band ← xl-bands-replacement-band
+emf-band ← emf-band                          xl-band-replacement-silicone-band ← xl-bands-replacement-silicone-band
+emf-band-xl ← emf-band-xl                    home-bundle ← home-bundle
+personal-card-ultra ← personal-card-ultra    bare-minimum ← bare-minimum
+cell-chip-ultra ← cell-chip-ultra            device-chip ← device-chip
+icell-ultra ← icell-chip-ultra               laptop-chip-ultra ← laptop-chip-ultra
+Skipped on purpose: daystar-better-zzzs, daystar-xl-band.

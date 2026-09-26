@@ -504,3 +504,33 @@ section[id]{scroll-margin-top:118px}
   *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
   .hero-orb::after{display:none}
 }
+
+/* =========================================================
+   PRODUCT PHOTOS — EMF Solutions catalog photography, hosted locally
+   (assets/img/products/<slug>/NN.ext · wired by _generator/apply-product-photos.mjs)
+   The SVG plate stays underneath as the fallback: if a photo 404s, onerror removes it.
+   ========================================================= */
+.pcard .plate .plate-photo{object-fit:cover;object-position:50% 45%}
+
+/* product page: stage + thumbnail strip */
+.pd-gallery{position:sticky;top:86px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.pd-gallery .pd-media{position:relative;top:auto;width:100%;min-height:320px;max-height:560px;
+  border:1px solid var(--hair-gold);box-shadow:var(--shadow-soft)}
+.pd-gallery .pd-media::after{content:"";position:absolute;inset:0;z-index:3;border-radius:inherit;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(126,200,227,.35)}
+.pd-media .pd-main{object-fit:contain;background:#fff;transition:opacity .25s var(--ease)}
+.pd-media .pd-main.is-swapping{opacity:.35}
+.pd-thumbs{display:flex;gap:10px;overflow-x:auto;padding:5px 5px 8px;margin:-5px -5px 0;scroll-snap-type:x proximity;scrollbar-width:thin}
+.pd-thumb{flex:0 0 auto;width:68px;height:68px;padding:0;border-radius:var(--radius-sm);overflow:hidden;cursor:pointer;
+  background:#fff;border:1px solid var(--hair-slate);scroll-snap-align:start;opacity:.78;
+  transition:opacity .2s var(--ease),border-color .2s var(--ease),box-shadow .2s var(--ease),transform .2s var(--ease)}
+.pd-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.pd-thumb:hover{opacity:1;transform:translateY(-2px);border-color:var(--foil)}
+.pd-thumb.is-active{opacity:1;border:2px solid var(--foil);box-shadow:var(--glow-gold),0 0 0 3px rgba(126,200,227,.35)}
+.pd-thumb:focus-visible{outline:2px solid var(--foil-hi);outline-offset:3px}
+.bg-ice .pd-thumb{background:#fff}
+@media(max-width:860px){
+  .pd-gallery{position:relative;top:0;max-width:440px;margin-inline:auto;width:100%}
+  .pd-gallery .pd-media{max-width:none;min-height:0}
+  .pd-thumb{width:58px;height:58px}
+}

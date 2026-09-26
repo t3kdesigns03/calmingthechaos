@@ -171,6 +171,45 @@
     setActive(Object.keys(map)[0]);
   }
 
+  /* ---------- product page photo gallery (thumbs → stage) ---------- */
+  $$(".pd-gallery").forEach(function (gal) {
+    var thumbs = $$(".pd-thumb", gal);
+    if (!thumbs.length) return;
+    var stage = $(".pd-media", gal);
+    function show(btn, focus) {
+      var main = $(".pd-main", gal);
+      if (!main) { // hero 404'd and removed itself — rebuild the stage image
+        main = document.createElement("img");
+        main.className = "pphoto pd-main";
+        main.setAttribute("decoding", "async");
+        main.onerror = function () { main.remove(); };
+        stage.insertBefore(main, stage.firstChild);
+      }
+      if (main.getAttribute("src") !== btn.dataset.src) {
+        main.classList.add("is-swapping");
+        main.onload = function () { main.classList.remove("is-swapping"); };
+        main.src = btn.dataset.src;
+      }
+      main.alt = btn.dataset.alt || "";
+      thumbs.forEach(function (t) {
+        var on = t === btn;
+        t.classList.toggle("is-active", on);
+        if (on) t.setAttribute("aria-current", "true"); else t.removeAttribute("aria-current");
+      });
+      if (focus) btn.focus();
+      if (btn.scrollIntoView) btn.scrollIntoView({ block: "nearest", inline: "nearest" });
+    }
+    thumbs.forEach(function (btn, i) {
+      btn.addEventListener("click", function () { show(btn, false); });
+      btn.addEventListener("keydown", function (e) {
+        var j = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : e.key === "Home" ? 0 : e.key === "End" ? thumbs.length - 1 : -1;
+        if (j < 0 && e.key !== "ArrowLeft") return;
+        e.preventDefault();
+        show(thumbs[(j + thumbs.length) % thumbs.length], true);
+      });
+    });
+  });
+
   /* ---------- year ---------- */
   $$(".js-year").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
