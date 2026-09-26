@@ -46,10 +46,10 @@ export const products = [
   {
     slug: "home-harmonizer", name: "Home Harmonizer", subtitle: "Upgraded for Fiber",
     icon: "box", collection: "home", tag: "Flagship",
-    image: "assets/img/products/home-harmonizer/01.png",
+    image: "assets/img/products/home-harmonizer/01.jpg",
     gallery: [
-      "assets/img/products/home-harmonizer/01.png",
-      "assets/img/products/home-harmonizer/02.jpg",
+      "assets/img/products/home-harmonizer/01.jpg",
+      "assets/img/products/home-harmonizer/02.png",
       "assets/img/products/home-harmonizer/03.jpg",
       "assets/img/products/home-harmonizer/04.jpg",
       "assets/img/products/home-harmonizer/05.jpg",
@@ -142,10 +142,10 @@ export const products = [
   {
     slug: "emf-band", name: "EMF Band", subtitle: "Upgraded for Fiber",
     icon: "band", collection: "body", tag: "Wearable",
-    image: "assets/img/products/emf-band/01.png",
+    image: "assets/img/products/emf-band/01.jpg",
     gallery: [
-      "assets/img/products/emf-band/01.png",
-      "assets/img/products/emf-band/02.jpg",
+      "assets/img/products/emf-band/01.jpg",
+      "assets/img/products/emf-band/02.png",
       "assets/img/products/emf-band/03.jpg",
       "assets/img/products/emf-band/04.jpg",
     ],
@@ -208,11 +208,11 @@ export const products = [
   {
     slug: "cell-chip-ultra", name: "Cell Chip Ultra", subtitle: "For most phones",
     icon: "phone", collection: "device", tag: "Phone",
-    image: "assets/img/products/cell-chip-ultra/01.png",
+    image: "assets/img/products/cell-chip-ultra/01.jpg",
     gallery: [
-      "assets/img/products/cell-chip-ultra/01.png",
+      "assets/img/products/cell-chip-ultra/01.jpg",
       "assets/img/products/cell-chip-ultra/02.png",
-      "assets/img/products/cell-chip-ultra/03.jpg",
+      "assets/img/products/cell-chip-ultra/03.png",
       "assets/img/products/cell-chip-ultra/04.jpg",
       "assets/img/products/cell-chip-ultra/05.jpg",
       "assets/img/products/cell-chip-ultra/06.jpg",
@@ -232,11 +232,11 @@ export const products = [
   {
     slug: "icell-ultra", name: "iCell Ultra", subtitle: "For MagSafe iPhones",
     icon: "iphone", collection: "device", tag: "iPhone 12+",
-    image: "assets/img/products/icell-ultra/01.png",
+    image: "assets/img/products/icell-ultra/01.jpg",
     gallery: [
-      "assets/img/products/icell-ultra/01.png",
+      "assets/img/products/icell-ultra/01.jpg",
       "assets/img/products/icell-ultra/02.png",
-      "assets/img/products/icell-ultra/03.jpg",
+      "assets/img/products/icell-ultra/03.png",
       "assets/img/products/icell-ultra/04.jpg",
       "assets/img/products/icell-ultra/05.jpg",
       "assets/img/products/icell-ultra/06.jpg",
@@ -256,10 +256,10 @@ export const products = [
   {
     slug: "laptop-chip-ultra", name: "Laptop Chip Ultra", subtitle: "Two per device",
     icon: "laptop", collection: "device", tag: "Two-pack",
-    image: "assets/img/products/laptop-chip-ultra/01.jpg",
+    image: "assets/img/products/laptop-chip-ultra/01.png",
     gallery: [
-      "assets/img/products/laptop-chip-ultra/01.jpg",
-      "assets/img/products/laptop-chip-ultra/02.png",
+      "assets/img/products/laptop-chip-ultra/01.png",
+      "assets/img/products/laptop-chip-ultra/02.jpg",
       "assets/img/products/laptop-chip-ultra/03.png",
       "assets/img/products/laptop-chip-ultra/04.png",
       "assets/img/products/laptop-chip-ultra/05.png",
@@ -327,10 +327,10 @@ export const products = [
   {
     slug: "armored-upgrade", name: "Armored Upgrade", subtitle: "Fiber-era booster",
     icon: "armor", collection: "upgrade", tag: "Upgrade",
-    image: "assets/img/products/armored-upgrade/01.jpg",
+    image: "assets/img/products/armored-upgrade/01.png",
     gallery: [
-      "assets/img/products/armored-upgrade/01.jpg",
-      "assets/img/products/armored-upgrade/02.png",
+      "assets/img/products/armored-upgrade/01.png",
+      "assets/img/products/armored-upgrade/02.jpg",
       "assets/img/products/armored-upgrade/03.jpg",
       "assets/img/products/armored-upgrade/04.jpg",
       "assets/img/products/armored-upgrade/05.jpg",
@@ -408,8 +408,9 @@ export const products = [
   {
     slug: "home-bundle", name: "Home Bundle", subtitle: "A calm starting kit",
     icon: "bundle", collection: "bundle", tag: "Best start",
-    image: "assets/img/products/home-bundle/01.jpg",
+    image: "assets/img/products/home-bundle/hero.jpg",
     gallery: [
+      "assets/img/products/home-bundle/hero.jpg",
       "assets/img/products/home-bundle/01.jpg",
       "assets/img/products/home-bundle/02.jpg",
       "assets/img/products/home-bundle/03.jpg",
@@ -434,8 +435,9 @@ export const products = [
   {
     slug: "bare-minimum", name: "Bare Minimum", subtitle: "The essentials, thoughtfully",
     icon: "bundle", collection: "bundle", tag: "Essentials",
-    image: "assets/img/products/bare-minimum/01.jpg",
+    image: "assets/img/products/bare-minimum/hero.jpg",
     gallery: [
+      "assets/img/products/bare-minimum/hero.jpg",
       "assets/img/products/bare-minimum/01.jpg",
       "assets/img/products/bare-minimum/02.jpg",
       "assets/img/products/bare-minimum/03.jpg",

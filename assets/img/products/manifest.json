@@ -1,7 +1,7 @@
 {
   "home-harmonizer": [
-    "01.png",
-    "02.jpg",
+    "01.jpg",
+    "02.png",
     "03.jpg",
     "04.jpg",
     "05.jpg",
@@ -29,8 +29,8 @@
     "03.jpg"
   ],
   "emf-band": [
-    "01.png",
-    "02.jpg",
+    "01.jpg",
+    "02.png",
     "03.jpg",
     "04.jpg"
   ],
@@ -47,24 +47,24 @@
     "03.jpg"
   ],
   "cell-chip-ultra": [
-    "01.png",
+    "01.jpg",
     "02.png",
-    "03.jpg",
+    "03.png",
     "04.jpg",
     "05.jpg",
     "06.jpg"
   ],
   "icell-ultra": [
-    "01.png",
+    "01.jpg",
     "02.png",
-    "03.jpg",
+    "03.png",
     "04.jpg",
     "05.jpg",
     "06.jpg"
   ],
   "laptop-chip-ultra": [
-    "01.jpg",
-    "02.png",
+    "01.png",
+    "02.jpg",
     "03.png",
     "04.png",
     "05.png"
@@ -86,8 +86,8 @@
     "04.jpg"
   ],
   "armored-upgrade": [
-    "01.jpg",
-    "02.png",
+    "01.png",
+    "02.jpg",
     "03.jpg",
     "04.jpg",
     "05.jpg"
@@ -103,6 +103,7 @@
     "01.jpg"
   ],
   "home-bundle": [
+    "hero.jpg",
     "01.jpg",
     "02.jpg",
     "03.jpg",
@@ -112,6 +113,7 @@
     "07.jpg"
   ],
   "bare-minimum": [
+    "hero.jpg",
     "01.jpg",
     "02.jpg",
     "03.jpg",
