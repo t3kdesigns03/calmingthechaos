@@ -28,7 +28,7 @@ function ctaBand(depth) {
 const localBiz = {
   "@context": "https://schema.org", "@type": "LocalBusiness",
   name: site.name, description: "EMF protection and remediation — a curated wellness line retailed by Lorelei Shafer.",
-  telephone: "+19728387600", email: site.email, image: site.url + "/assets/img/og-banner.png",
+  telephone: site.phoneHref.replace(/^tel:/, ""), email: site.email, image: site.url + "/assets/img/og-banner.png",
   url: site.url, slogan: "Gold-standard tools for a quieter field.",
   areaServed: "US", priceRange: "$$",
 };
@@ -485,7 +485,7 @@ function about() {
   <h2>Ready when you are</h2>
   <div class="contact-strip" style="max-width:720px;margin:26px auto 0">
     <a href="${site.phoneHref}"><span class="ic" style="color:var(--gold-bright)">${icon.call}</span><span><span>Call or text</span><b>${site.phone}</b></span></a>
-    <a href="${site.emailHref}"><span class="ic" style="color:var(--gold-bright)">${icon.mail}</span><span><span>Email</span><b>${site.email}</b></span></a>
+    <a href="${site.emailHref}"><span class="ic" style="color:var(--gold-bright)">${icon.mail}</span><span><span>Email</span><b>${site.email.replace("@", "@<wbr>")}</b></span></a>
   </div>
 </div></section>
 `;
@@ -514,7 +514,7 @@ function contact() {
     <div data-reveal>
       <div class="contact-strip" style="flex-direction:column">
         <a href="${site.phoneHref}"><span class="ic" style="color:var(--gold-bright)">${icon.call}</span><span><span>Call or text</span><b>${site.phone}</b></span></a>
-        <a href="${site.emailHref}"><span class="ic" style="color:var(--gold-bright)">${icon.mail}</span><span><span>Email</span><b>${site.email}</b></span></a>
+        <a href="${site.emailHref}"><span class="ic" style="color:var(--gold-bright)">${icon.mail}</span><span><span>Email</span><b>${site.email.replace("@", "@<wbr>")}</b></span></a>
       </div>
       <div class="card" style="margin-top:20px">
         <h4>What helps Lorelei help you</h4>
@@ -557,7 +557,7 @@ function contact() {
     title: "Contact Lorelei — Calming The Chaos",
     desc: "Call, text, or email Lorelei Shafer at Calming The Chaos. Tell her about your space and get a personal, no-pressure recommendation.",
     path: "contact.html", depth: 0, current: "contact.html",
-    schema: { ...localBiz, "@type": "LocalBusiness", contactPoint: { "@type": "ContactPoint", telephone: "+19728387600", email: site.email, contactType: "sales" } },
+    schema: { ...localBiz, "@type": "LocalBusiness", contactPoint: { "@type": "ContactPoint", telephone: site.phoneHref.replace(/^tel:/, ""), email: site.email, contactType: "sales" } },
   }, main);
 }
 

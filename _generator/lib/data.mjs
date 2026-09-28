@@ -3,8 +3,8 @@
 export const site = {
   name: "Calming The Chaos",
   tagline: "EMF Protection and Remediation",
-  phone: "(972) 838-7600",
-  phoneHref: "tel:+19728387600",
+  phone: "(806) 789-4795",
+  phoneHref: "tel:+18067894795",
   email: "nevergiveupxx@icloud.com",
   emailHref: "mailto:nevergiveupxx@icloud.com",
   owner: "Lorelei Shafer",

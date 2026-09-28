@@ -404,9 +404,16 @@ section{position:relative}
 .contact-strip .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(4,16,31,.4);border:1px solid var(--hair-cyan)}
 .contact-strip b{display:block;font-size:1.02rem;overflow-wrap:anywhere;word-break:break-word;min-width:0}
 .contact-strip span:last-child{min-width:0}
-.foot-contact a{overflow-wrap:anywhere}
+.foot-contact a{overflow-wrap:normal;word-break:normal}
 @media(max-width:400px){.contact-strip b{font-size:.92rem}}
 .contact-strip span{font-size:.78rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+/* Email value: shrink to fit on one line; if it still can't fit, the only break is the <wbr> after "@" */
+.contact-strip a[href^="mailto:"] b{font-size:clamp(.78rem,3.6vw,1.05rem);letter-spacing:0;text-transform:none;white-space:normal;overflow-wrap:normal;word-break:normal}
+@media(max-width:480px){
+  .contact-strip a[href^="mailto:"]{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;column-gap:12px;row-gap:10px}
+  .contact-strip a[href^="mailto:"]>span:last-child{display:contents}
+  .contact-strip a[href^="mailto:"] b{grid-column:1/-1}
+}
 
 /* =========================================================
    FOOTER

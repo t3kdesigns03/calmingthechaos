@@ -77,7 +77,7 @@ export function footer(depth = 0) {
         <p>Gold-standard tools for a quieter field. Lorelei Shafer helps you choose the right harmony for your home, your devices, and your family.</p>
         <div class="foot-contact" style="margin-top:16px">
           <a href="${site.phoneHref}">${site.phone}</a><br>
-          <a href="${site.emailHref}">${site.email}</a>
+          <a href="${site.emailHref}">${site.email.replace("@", "@<wbr>")}</a>
         </div>
       </div>
       ${col("Shop", [["Whole home", "shop.html#home"], ["Sleep", "shop.html#sleep"], ["On the body", "shop.html#body"], ["Device chips", "shop.html#device"], ["Bundles", "shop.html#bundle"]])}
