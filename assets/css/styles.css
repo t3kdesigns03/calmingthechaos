@@ -541,3 +541,76 @@ section[id]{scroll-margin-top:118px}
   .pd-gallery .pd-media{max-width:none;min-height:0}
   .pd-thumb{width:58px;height:58px}
 }
+/* =========================================================
+   CONTACT — THE FIELD (phase 3)
+   Standing-wave rings pulse from a centre; a gold + a cyan wash drift and meet.
+   Transform/opacity only (compositor, no repaint), paused off-screen by app.js,
+   frozen to a static halo under prefers-reduced-motion. No canvas.
+   ========================================================= */
+.field-aurora{overflow:hidden}
+.field-aurora::after{content:"";position:absolute;inset:-18%;z-index:-1;pointer-events:none;
+  background:radial-gradient(34% 30% at 24% 30%,rgba(243,215,138,.20),transparent 70%),
+             radial-gradient(40% 34% at 76% 66%,rgba(126,200,227,.30),transparent 70%);
+  animation:field-drift 26s ease-in-out infinite alternate;will-change:transform}
+.hero.field-aurora::after{z-index:-2}
+@keyframes field-drift{
+  0%{transform:translate3d(-4%,-2%,0) rotate(0deg)}
+  50%{transform:translate3d(3%,3%,0) rotate(4deg)}
+  100%{transform:translate3d(5%,-3%,0) rotate(-3deg)}}
+
+/* rings: element = static halo; ::before gold / ::after cyan, half a cycle apart,
+   each a pair of concentric lines (border + inset outline) = a quiet standing wave */
+.field-rings{--ring:min(118vw,560px);--ring-t:10s;
+  position:absolute;z-index:-1;left:50%;top:50%;width:var(--ring);aspect-ratio:1/1;
+  transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(243,215,138,.10),rgba(126,200,227,.07) 55%,transparent 100%)}
+.field-rings::before,.field-rings::after{content:"";position:absolute;inset:0;border-radius:50%;
+  border:1.5px solid rgba(243,215,138,.25);outline:1px solid rgba(243,215,138,.15);outline-offset:-22px;
+  box-shadow:0 0 18px rgba(243,215,138,.16),inset 0 0 18px rgba(243,215,138,.10);
+  opacity:0;transform:scale(.28);
+  animation:field-pulse var(--ring-t) cubic-bezier(.25,.6,.3,1) infinite;will-change:transform,opacity}
+.field-rings::after{border-color:rgba(158,222,242,.25);outline-color:rgba(158,222,242,.15);
+  box-shadow:0 0 18px rgba(158,222,242,.18),inset 0 0 18px rgba(158,222,242,.10);
+  translate:3% -2%;animation-delay:calc(var(--ring-t) / -2)}
+@keyframes field-pulse{
+  0%{opacity:0;transform:scale(.28)}
+  18%{opacity:1}
+  70%{opacity:.55}
+  100%{opacity:0;transform:scale(1)}}
+.field-rings--hero{top:44%}
+.field-idle::after,.field-idle .field-rings::before,.field-idle .field-rings::after{animation-play-state:paused}
+
+/* teal band */
+.contact-grid{grid-template-columns:minmax(0,1fr);gap:clamp(22px,5vw,64px);align-items:start}
+.contact-side{position:relative;isolation:isolate;min-width:0}
+.field-rings--call{--ring:min(210vw,880px);--ring-t:12s;left:40px;top:38px}
+.contact-first{display:flex;align-items:center;gap:10px;width:fit-content;max-width:100%;margin:16px 0 0;padding:8px 14px 8px 12px;
+  border-radius:14px;background:rgba(18,48,63,.55);border:1px solid rgba(243,215,138,.28);color:#fff;font-weight:600;font-size:.92rem;line-height:1.4}
+.contact-first::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--foil-hi,#F3D78A);box-shadow:0 0 0 4px rgba(243,215,138,.2)}
+.contact-band .card{background:rgba(250,252,253,.93);backdrop-filter:none;-webkit-backdrop-filter:none}
+.contact-band .help-card{margin-top:16px}
+.form .field::before{content:none}
+.contact-band .form .field label{color:var(--ink,#12303F)}
+.contact-band .card .tiny{color:var(--slate-2,#3C5D6E)}
+.talk-line{margin:2px 0 0;font-size:.9rem}
+.talk-num{color:var(--blue-2,#2B6F8A);font-weight:700;white-space:nowrap;text-decoration:underline;
+  text-decoration-color:rgba(43,111,138,.4);text-underline-offset:3px}
+
+/* cream chips: 2px lift + short gold glow on press, then settle (no overshoot) */
+.contact-strip a{transition:transform .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease)}
+.contact-strip a:hover{transform:translateY(-2px)}
+@media (hover:none){.contact-strip a:hover{transform:none;box-shadow:none;border-color:var(--hair-gold)}}
+.contact-strip a:active{transform:translateY(-2px);border-color:var(--foil,#C9A24A);
+  box-shadow:0 0 0 3px rgba(243,215,138,.35),0 10px 26px -12px rgba(140,106,30,.55);transition-duration:.12s}
+
+@media(min-width:960px){
+  .contact-grid{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}
+  .field-rings--hero{--ring:900px;--ring-t:14s}
+  .field-rings--call{--ring:1100px;--ring-t:16s}
+}
+@media (prefers-reduced-motion:reduce){
+  .field-aurora::after{animation:none}
+  .field-rings::before{animation:none;opacity:.6;transform:scale(.62)}
+  .field-rings::after{animation:none;opacity:0}
+  .contact-strip a:hover,.contact-strip a:active{transform:none}
+}

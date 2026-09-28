@@ -501,24 +501,26 @@ function about() {
    ============================================================ */
 function contact() {
   const main = `
-<section class="hero" style="min-height:auto;padding-block:clamp(64px,10vw,110px)">
-  <div class="hero-aura"></div><div class="hero-grain"></div>
+<section class="hero contact-hero field-aurora" style="min-height:auto;padding-block:clamp(64px,10vw,110px)">
+  <div class="hero-aura"></div><div class="hero-grain"></div><div class="field-rings field-rings--hero" aria-hidden="true"></div>
   <div class="wrap center" data-reveal>
     <div class="eyebrow mx-auto">Contact</div>
     <h1>Ask <span class="gold-text">Lorelei</span></h1>
     <p class="lead measure mx-auto">Tell her about your space and what’s on your mind. She’ll help you choose the right pieces — or tell you honestly if you don’t need much at all.</p>
   </div>
 </section>
-<section class="section bg-navy field"><div class="wrap-wide">
-  <div class="grid g-2" style="gap:clamp(28px,5vw,64px);align-items:start">
-    <div data-reveal>
+<section class="section bg-navy field field-aurora contact-band"><div class="wrap-wide">
+  <div class="grid contact-grid">
+    <div class="contact-side">
+      <div class="field-rings field-rings--call" aria-hidden="true"></div>
       <div class="contact-strip" style="flex-direction:column">
-        <a href="${site.phoneHref}"><span class="ic" style="color:var(--gold-bright)">${icon.call}</span><span><span>Call or text</span><b>${site.phone}</b></span></a>
-        <a href="${site.emailHref}"><span class="ic" style="color:var(--gold-bright)">${icon.mail}</span><span><span>Email</span><b>${site.email.replace("@", "@<wbr>")}</b></span></a>
+        <a data-reveal data-reveal-delay="0" href="${site.phoneHref}"><span class="ic" style="color:var(--gold-bright)">${icon.call}</span><span><span>Call or text</span><b>${site.phone}</b></span></a>
+        <a data-reveal data-reveal-delay="80" href="${site.emailHref}"><span class="ic" style="color:var(--gold-bright)">${icon.mail}</span><span><span>Email</span><b>${site.email.replace("@", "@<wbr>")}</b></span></a>
       </div>
-      <div class="card" style="margin-top:20px">
+      <p class="contact-first" data-reveal data-reveal-delay="120">Call or text first if you want an answer today.</p>
+      <div class="card help-card" data-reveal data-reveal-delay="160">
         <h4>What helps Lorelei help you</h4>
-        <ul style="color:var(--baby-blue-soft);padding-left:1.1em;margin:8px 0 0">
+        <ul style="color:var(--slate-2,#3C5D6E);padding-left:1.1em;margin:8px 0 0">
           <li>Roughly how many square feet, and how many floors</li>
           <li>Metal roof, solar panels, or a cell tower nearby?</li>
           <li>House, apartment, condo, or something you’re renting</li>
@@ -528,9 +530,9 @@ function contact() {
         <p class="tiny" style="margin-top:14px">${disclaimerShort}</p>
       </div>
     </div>
-    <div class="card" data-reveal>
+    <div class="card form-card" data-reveal data-reveal-delay="240">
       <h3 class="gold-text">Send a note</h3>
-      <p style="color:var(--baby-blue-soft);margin-bottom:18px">This opens your email app with the details filled in — no account required.</p>
+      <p style="color:var(--slate-2,#3C5D6E);margin-bottom:18px">This opens your email app with the details filled in — no account required.</p>
       <form class="form" id="contact-form">
         <div class="form-2">
           <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="First and last" required></div>
@@ -543,11 +545,11 @@ function contact() {
             <option>Hotel / travel</option><option>Office</option><option>Car only</option><option>Just my phone</option>
           </select></div>
         <div class="field"><label for="concern">What’s bothering you?</label>
-          <input id="concern" name="concern" type="text" placeholder="Sleep, focus, a calmer home, a nearby tower…"></div>
+          <input id="concern" name="concern" type="text" placeholder="Sleep, focus, a tower…"></div>
         <div class="field"><label for="message">Anything else?</label>
           <textarea id="message" name="message" placeholder="Square footage, roof type, devices, household size — whatever you’d like Lorelei to know."></textarea></div>
         <button class="btn btn-gold btn-block" type="submit">${icon.mail} Send to Lorelei</button>
-        <p class="tiny center">Prefer to talk? Call or text <a href="${site.phoneHref}" style="color:var(--cyan-glow)">${site.phone}</a>.</p>
+        <p class="tiny center talk-line">Prefer to talk? Call or text&nbsp;<a class="talk-num" href="${site.phoneHref}">${site.phone}</a>.</p>
       </form>
     </div>
   </div>

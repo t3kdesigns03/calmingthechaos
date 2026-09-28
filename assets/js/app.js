@@ -125,6 +125,15 @@
     });
   }
 
+  /* ---------- field motion: pause rings + aurora while off-screen (battery) ---------- */
+  var fields = $$(".field-aurora");
+  if (fields.length && "IntersectionObserver" in window) {
+    var fio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { en.target.classList.toggle("field-idle", !en.isIntersecting); });
+    }, { rootMargin: "80px 0px" });
+    fields.forEach(function (f) { fio.observe(f); });
+  }
+
   /* ---------- reveal on scroll ---------- */
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion:reduce)").matches) {
     var io = new IntersectionObserver(function (entries) {
@@ -133,8 +142,17 @@
       });
     }, { threshold: 0.12 });
     $$("[data-reveal]").forEach(function (el) {
+      // optional stagger: data-reveal-delay="80" (ms). Staggered blocks hand their
+      // transform back to the stylesheet when done, so hover/press lifts keep working.
+      var d = el.getAttribute("data-reveal-delay");
+      var dl = d === null ? "" : " " + (parseInt(d, 10) || 0) + "ms";
       el.style.opacity = 0; el.style.transform = "translateY(22px)";
-      el.style.transition = "opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)";
+      el.style.transition = "opacity .7s cubic-bezier(.2,.7,.2,1)" + dl + ", transform .7s cubic-bezier(.2,.7,.2,1)" + dl;
+      if (d !== null) el.addEventListener("transitionend", function done(ev) {
+        if (ev.target !== el || ev.propertyName !== "transform") return;
+        el.style.transition = ""; el.style.transform = ""; el.style.opacity = "";
+        el.removeEventListener("transitionend", done);
+      });
       io.observe(el);
     });
   }
