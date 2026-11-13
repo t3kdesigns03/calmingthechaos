@@ -27,14 +27,15 @@
 
 .co-loading{color:var(--slate-2);font-size:.92rem}
 .co-wallets{display:grid;gap:12px}
-.co-wallets paypal-button,.co-wallets venmo-button,.co-wallets paypal-basic-card-button{display:block;width:100%;min-height:48px}
+.co-wallets paypal-button,.co-wallets venmo-button,.co-wallets paypal-basic-card-container,.co-wallets paypal-basic-card-button{display:block;width:100%;min-height:48px}
 .co-wallets [hidden]{display:none!important}
 .co-or{display:flex;align-items:center;gap:12px;margin:22px 0 14px;color:var(--slate-2);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
 .co-or::before,.co-or::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--hair-gold),transparent)}
 .co-cards{display:grid;gap:6px}
 .co-cf-label{font-weight:700;font-size:.85rem;color:var(--ink);margin-top:8px}
-.co-cf{min-height:52px}
-.co-cf>*{display:block;width:100%}
+/* PayPal card fields render as iframes (150px default) — give each a fixed height */
+.co-cf{height:56px}
+.co-cf>*{display:block;width:100%;height:100%!important}
 .co-cf-row{gap:16px}
 .co-check{display:flex;align-items:center;gap:10px;margin:12px 0 4px;font-size:.92rem;color:var(--ink);cursor:pointer}
 .co-check input{width:18px;height:18px;accent-color:var(--blue-2)}
