@@ -1,0 +1,77 @@
+/* Checkout page — builds on styles.css tokens; no global overrides. */
+.checkout-page [hidden]{display:none!important}
+.co-hero h1{font-size:clamp(2rem,5vw,3.2rem)}
+.co-section{padding-top:clamp(32px,4vw,56px)}
+.co-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:start}
+.co-main{display:grid;gap:clamp(16px,2.4vw,24px);min-width:0}
+.co-side{position:sticky;top:96px}
+@media(max-width:900px){.co-grid{grid-template-columns:1fr}.co-side{position:static;order:-1}}
+
+.co-step{padding:clamp(20px,3vw,32px)}
+.co-step-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.co-step-head h3{margin:0;font-size:clamp(1.25rem,2vw,1.5rem)}
+.co-num{width:34px;height:34px;flex:0 0 auto;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.9rem;
+  background:var(--grad-gold);color:#1b1305;box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+.co-step[aria-disabled="true"] .co-num{background:rgba(43,111,138,.14);color:var(--blue-2);box-shadow:none;border:1px solid var(--hair-gold)}
+.co-hint{font-weight:500;color:var(--slate-2);font-size:.8em}
+.co-muted{color:var(--slate-2)}
+.co-note{margin:-4px 0 0;color:var(--slate-2)}
+.co-3{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:16px}
+@media(max-width:600px){.co-3{grid-template-columns:1fr 1fr}.co-3 .field:first-child{grid-column:1/-1}}
+.field input[aria-invalid="true"],.field select[aria-invalid="true"]{border-color:#B4482F;box-shadow:0 0 0 3px rgba(180,72,47,.14)}
+.co-err{margin:0;padding:12px 14px;border-radius:12px;background:#FBEDE8;border:1px solid rgba(180,72,47,.35);color:#7A2A17;font-weight:600;font-size:.92rem;line-height:1.45}
+
+.co-ship-done{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.co-ship-done address{font-style:normal;line-height:1.55;color:var(--ink)}
+.co-ship-done address b{display:block}
+
+.co-loading{color:var(--slate-2);font-size:.92rem}
+.co-wallets{display:grid;gap:12px}
+.co-wallets paypal-button,.co-wallets venmo-button,.co-wallets paypal-basic-card-button{display:block;width:100%;min-height:48px}
+.co-wallets [hidden]{display:none!important}
+.co-or{display:flex;align-items:center;gap:12px;margin:22px 0 14px;color:var(--slate-2);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.co-or::before,.co-or::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--hair-gold),transparent)}
+.co-cards{display:grid;gap:6px}
+.co-cf-label{font-weight:700;font-size:.85rem;color:var(--ink);margin-top:8px}
+.co-cf{min-height:52px}
+.co-cf>*{display:block;width:100%}
+.co-cf-row{gap:16px}
+.co-check{display:flex;align-items:center;gap:10px;margin:12px 0 4px;font-size:.92rem;color:var(--ink);cursor:pointer}
+.co-check input{width:18px;height:18px;accent-color:var(--blue-2)}
+#bill-fields{display:grid;gap:12px;margin:6px 0 4px}
+#bill-fields[hidden]{display:none}
+#card-pay{margin-top:14px}
+.co-secure{display:flex;align-items:center;gap:8px;margin:16px 0 0;color:var(--slate-2)}
+.co-secure svg{width:16px;height:16px;flex:0 0 auto}
+#pay-err{margin-top:14px}
+
+.co-step{position:relative}
+.co-busy{position:absolute;inset:0;border-radius:inherit;background:rgba(234,244,248,.86);backdrop-filter:blur(2px);
+  display:flex;align-items:center;justify-content:center;gap:12px;font-weight:700;color:var(--ink);z-index:5}
+.co-busy[hidden]{display:none}
+.co-spin{width:22px;height:22px;border-radius:50%;border:3px solid rgba(43,111,138,.2);border-top-color:var(--blue-2);animation:co-spin .8s linear infinite}
+@keyframes co-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.co-spin{animation-duration:2.4s}}
+
+.co-side{padding:clamp(20px,3vw,28px)}
+.co-side-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+.co-side-head h3{margin:0;font-size:1.25rem}
+.co-lines{list-style:none;margin:0;padding:0}
+.co-lines li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--hair-slate);color:var(--ink)}
+.co-lines li span{min-width:0}
+.co-lines li small{display:block;color:var(--slate-2);font-size:.8rem}
+.co-lines li b{white-space:nowrap;font-weight:700}
+.co-totals{margin:12px 0 14px;display:grid;gap:8px}
+.co-totals div{display:flex;justify-content:space-between;gap:12px;color:var(--slate)}
+.co-totals dt,.co-totals dd{margin:0}
+.co-totals .co-grand{border-top:1px solid var(--hair-gold);padding-top:12px;margin-top:4px;font-weight:800;color:var(--ink);font-size:1.15rem}
+.co-totals .co-grand dd{font-family:var(--font-display)}
+
+.co-empty,.co-done{max-width:640px;margin-inline:auto;text-align:center;padding:clamp(28px,4vw,48px)}
+.co-done:focus{outline:none}
+.co-done-mark{width:64px;height:64px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;background:var(--grad-gold);color:#1b1305}
+.co-done-mark svg{width:30px;height:30px}
+.co-done-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 36px;margin:18px 0}
+.co-done-meta dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-2);font-weight:700}
+.co-done-meta dd{margin:4px 0 0;font-family:var(--font-display);font-size:1.3rem;color:var(--ink)}
+.co-done .btn{margin-top:10px}

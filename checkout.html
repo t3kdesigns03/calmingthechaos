@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checkout — Calming The Chaos</title>
+<meta name="description" content="Secure checkout for Calming The Chaos. Pay with PayPal, Venmo, or any major debit or credit card.">
+<link rel="canonical" href="https://calmingemfchaos.com/checkout.html">
+<meta name="theme-color" content="#C5E4F0">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Calming The Chaos">
+<meta property="og:title" content="Checkout — Calming The Chaos">
+<meta property="og:description" content="Secure checkout for Calming The Chaos. Pay with PayPal, Venmo, or any major debit or credit card.">
+<meta property="og:image" content="https://t3kdesigns03.github.io/calmingthechaos/assets/img/og-banner.png">
+<meta property="og:url" content="https://calmingemfchaos.com/checkout.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Checkout — Calming The Chaos">
+<meta name="twitter:description" content="Secure checkout for Calming The Chaos. Pay with PayPal, Venmo, or any major debit or credit card.">
+<meta name="twitter:image" content="https://t3kdesigns03.github.io/calmingthechaos/assets/img/og-banner.png">
+<link rel="icon" type="image/svg+xml" href="assets/img/mark.svg">
+<link rel="icon" type="image/png" href="assets/img/mark-512.png">
+<link rel="apple-touch-icon" href="assets/img/mark-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/checkout.css">
+</head>
+<body class="">
+<header class="site-header">
+  <div class="wrap-wide nav">
+    <a class="brand" href="index.html" aria-label="Calming The Chaos — home">
+      <picture><source type="image/webp" srcset="assets/img/mark-128.webp 1x, assets/img/mark-256.webp 2x"><img class="brand-mark" src="assets/img/mark-128.png" alt="Calming The Chaos" width="48" height="48"></picture><span class="bt"><b>Calming The Chaos</b><span>EMF Protection &amp; Remediation</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="shop.html">Shop</a><a href="how-it-works.html">How It Works</a><a href="start-here.html">Start Here</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+      <a class="btn btn-gold btn-sm" href="shop.html">Shop the Line</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn js-open-cart" aria-label="Open selections">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M4 13h16M12 9v11"/><path d="M12 9C9 9 7 4 12 6c5-2 3 3 0 3z"/></svg><span class="cart-count" style="display:none">0</span>
+      </button>
+      <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<main id="main" class="checkout-page">
+
+<section class="hero co-hero field-aurora" style="min-height:auto;padding-block:clamp(48px,7vw,84px)">
+  <div class="hero-aura"></div><div class="hero-grain"></div>
+  <div class="wrap center">
+    <div class="eyebrow mx-auto">Checkout</div>
+    <h1>Secure <span class="gold-text">checkout</span></h1>
+    <p class="lead measure mx-auto">Pay with PayPal, Venmo, or any major debit or credit card. Payments are processed by PayPal &mdash; your card details never touch our site.</p>
+  </div>
+</section>
+
+<section class="section-tight bg-ice co-section"><div class="wrap-wide">
+  <div class="co-empty card" id="co-empty" hidden>
+    <h3>Your cart is empty</h3>
+    <p>Browse the collection and add the pieces you&rsquo;d like &mdash; or ask Lorelei what fits your space.</p>
+    <div class="btn-row" style="justify-content:center"><a class="btn btn-gold" href="shop.html">Shop the line</a><a class="btn btn-ghost" href="contact.html">Ask Lorelei</a></div>
+  </div>
+
+  <div class="co-done card" id="co-done" hidden tabindex="-1">
+    <div class="co-done-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></div>
+    <h2 id="co-done-title">Thank you &mdash; your order is in</h2>
+    <p id="co-done-msg">Payment received.</p>
+    <dl class="co-done-meta">
+      <div><dt>Order number</dt><dd id="co-done-ref">—</dd></div>
+      <div><dt>Total paid</dt><dd id="co-done-total">—</dd></div>
+    </dl>
+    <p class="tiny">Lorelei will email <b id="co-done-email"></b> when it ships. Keep your order number handy if you need to reach her: <a href="tel:+18067894795">(806) 789-4795</a>.</p>
+    <a class="btn btn-gold" href="shop.html">Back to the shop</a>
+  </div>
+
+  <div class="co-grid" id="co-grid" hidden>
+    <div class="co-main">
+
+      <div class="card co-step" id="co-ship">
+        <div class="co-step-head"><span class="co-num">1</span><h3>Shipping details</h3></div>
+        <form class="form" id="ship-form" novalidate>
+          <div class="form-2">
+            <div class="field"><label for="s-name">Full name</label><input id="s-name" name="name" autocomplete="shipping name" required maxlength="300"></div>
+            <div class="field"><label for="s-email">Email <span class="co-hint">for your receipt</span></label><input id="s-email" name="email" type="email" autocomplete="email" required maxlength="254"></div>
+          </div>
+          <div class="field"><label for="s-line1">Street address</label><input id="s-line1" name="line1" autocomplete="shipping address-line1" required maxlength="300"></div>
+          <div class="field"><label for="s-line2">Apt, suite, unit <span class="co-hint">optional</span></label><input id="s-line2" name="line2" autocomplete="shipping address-line2" maxlength="300"></div>
+          <div class="co-3">
+            <div class="field"><label for="s-city">City</label><input id="s-city" name="city" autocomplete="shipping address-level2" required maxlength="120"></div>
+            <div class="field"><label for="s-state">State</label><select id="s-state" name="state" autocomplete="shipping address-level1" required></select></div>
+            <div class="field"><label for="s-zip">ZIP</label><input id="s-zip" name="zip" autocomplete="shipping postal-code" inputmode="numeric" required maxlength="10"></div>
+          </div>
+          <div class="field"><label for="s-phone">Phone <span class="co-hint">optional &mdash; only if there&rsquo;s a delivery question</span></label><input id="s-phone" name="phone" type="tel" autocomplete="tel" maxlength="30"></div>
+          <p class="tiny co-note">We ship within the United States.</p>
+          <p class="co-err" id="ship-err" role="alert" hidden></p>
+          <button class="btn btn-gold btn-block" type="submit" id="ship-go">Continue to payment</button>
+        </form>
+        <div class="co-ship-done" id="ship-done" hidden>
+          <address id="ship-summary"></address>
+          <button class="btn btn-line btn-sm" type="button" id="ship-edit">Edit</button>
+        </div>
+      </div>
+
+      <div class="card co-step" id="co-pay" aria-disabled="true">
+        <div class="co-step-head"><span class="co-num">2</span><h3>Payment</h3></div>
+        <p class="co-muted" id="pay-locked">Enter your shipping details to see payment options.</p>
+        <div id="pay-body" hidden>
+          <p class="co-loading" id="pay-loading">Loading secure payment options&hellip;</p>
+          <div class="co-wallets" id="co-wallets">
+            <paypal-button id="pp-btn" type="pay" hidden></paypal-button>
+            <venmo-button id="venmo-btn" type="pay" hidden></venmo-button>
+            <paypal-basic-card-container id="guest-wrap" hidden><paypal-basic-card-button id="guest-btn"></paypal-basic-card-button></paypal-basic-card-container>
+          </div>
+          <div class="co-cards" id="co-cards" hidden>
+            <div class="co-or"><span>or enter your card here</span></div>
+            <div class="co-cf-label">Name on card</div><div class="co-cf" id="cf-name"></div>
+            <div class="co-cf-label">Card number</div><div class="co-cf" id="cf-number"></div>
+            <div class="form-2 co-cf-row">
+              <div><div class="co-cf-label">Expiration</div><div class="co-cf" id="cf-expiry"></div></div>
+              <div><div class="co-cf-label">Security code</div><div class="co-cf" id="cf-cvv"></div></div>
+            </div>
+            <label class="co-check"><input type="checkbox" id="bill-same" checked> Billing address is the same as shipping</label>
+            <div id="bill-fields" hidden>
+              <div class="field"><label for="b-line1">Billing street address</label><input id="b-line1" autocomplete="billing address-line1" maxlength="300"></div>
+              <div class="co-3">
+                <div class="field"><label for="b-city">City</label><input id="b-city" autocomplete="billing address-level2" maxlength="120"></div>
+                <div class="field"><label for="b-state">State</label><select id="b-state" autocomplete="billing address-level1"></select></div>
+                <div class="field"><label for="b-zip">ZIP</label><input id="b-zip" autocomplete="billing postal-code" inputmode="numeric" maxlength="10"></div>
+              </div>
+            </div>
+            <button class="btn btn-gold btn-block" type="button" id="card-pay">Pay by card</button>
+          </div>
+          <p class="co-err" id="pay-err" role="alert" hidden></p>
+          <p class="tiny co-secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> Card details are entered into PayPal-hosted fields and never reach this website.</p>
+        </div>
+        <div class="co-busy" id="pay-busy" hidden><span class="co-spin" aria-hidden="true"></span><span>Confirming your payment&hellip;</span></div>
+      </div>
+    </div>
+
+    <aside class="card co-side" aria-labelledby="sum-title">
+      <div class="co-side-head"><h3 id="sum-title">Order summary</h3><button class="btn btn-line btn-sm js-open-cart" type="button">Edit cart</button></div>
+      <ul class="co-lines" id="sum-lines"></ul>
+      <dl class="co-totals">
+        <div><dt>Subtotal</dt><dd id="sum-sub">—</dd></div>
+        <div><dt>Shipping</dt><dd id="sum-ship">Next step</dd></div>
+        <div><dt>Sales tax <span class="co-hint">Texas only</span></dt><dd id="sum-tax">Next step</dd></div>
+        <div class="co-grand"><dt>Total</dt><dd id="sum-total">—</dd></div>
+      </dl>
+      <p class="tiny co-muted">For general wellness and environmental harmony. Not a medical device. Questions before you buy? <a href="contact.html">Ask Lorelei</a>.</p>
+    </aside>
+  </div>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap-wide">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-mark"><picture><source type="image/webp" srcset="assets/img/mark-256.webp"><img src="assets/img/mark-128.png" alt="" width="48" height="48" loading="lazy"></picture><b>Calming The Chaos</b></div>
+        <p>Gold-standard tools for a quieter field. Lorelei Shafer helps you choose the right harmony for your home, your devices, and your family.</p>
+        <div class="foot-contact" style="margin-top:16px">
+          <a href="tel:+18067894795">(806) 789-4795</a><br>
+          <a href="mailto:nevergiveupxx@icloud.com">nevergiveupxx@<wbr>icloud.com</a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Shop</h5><a href="shop.html#home">Whole home</a><a href="shop.html#sleep">Sleep</a><a href="shop.html#body">On the body</a><a href="shop.html#device">Device chips</a><a href="shop.html#bundle">Bundles</a></div>
+      <div class="foot-col"><h5>Learn</h5><a href="how-it-works.html">How It Works</a><a href="start-here.html">Start Here</a><a href="faq.html">FAQ</a><a href="about.html">About Lorelei</a></div>
+      <div class="foot-col"><h5>Connect</h5><a href="contact.html">Contact</a><a href="contact.html">Call Lorelei</a><a href="legal.html">Legal & Disclaimer</a></div>
+    </div>
+    <p class="foot-disc">Products in this line were originally developed by EMF Solutions and are retailed by Calming The Chaos. These products are intended for general wellness and environmental harmony only. They are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease. They are not FDA approved. Statements describing laboratory or field testing refer to testing reported by the manufacturer and have not been independently verified; individual experiences vary.</p>
+    <p class="foot-disc foot-pma">Calming The Chaos is operated by Lorelei Shafer, a Private Membership Associate (PMA) and independent authorized seller of EMF Solutions products. Products are manufactured by EMF Solutions; Lorelei provides guidance and retail.</p>
+    <div class="foot-bottom">
+      <span>© <span class="js-year">2026</span> Calming The Chaos. All rights reserved.</span>
+      <span>Made with calm · (806) 789-4795</span>
+    </div>
+  </div>
+</footer>
+<div class="drawer-scrim js-close-cart" aria-hidden="true"></div>
+<aside class="drawer" role="dialog" aria-label="Your selections" aria-modal="true">
+  <div class="drawer-head">
+    <h3 class="gold-text">Your selections</h3>
+    <button class="drawer-close js-close-cart" aria-label="Close">×</button>
+  </div>
+  <div class="drawer-body"></div>
+  <div class="drawer-foot">
+    <div class="drawer-total"><span>Subtotal</span><b class="gold-text">$0.00</b></div>
+    <a class="btn btn-gold btn-block js-checkout" href="checkout.html">Checkout</a>
+    <p class="drawer-note">Pay with PayPal, Venmo, or card. Shipping and any Texas sales tax are added at checkout. Questions first? <a href="contact.html">Ask Lorelei</a>.</p>
+  </div>
+</aside>
+<div class="toast"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg></span><b>Added</b></div>
+<div id="svg-lib" hidden aria-hidden="true"><div id="svg-box"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <path d="M60 26 96 44v34L60 96 24 78V44z"/>
+      <path d="M60 26 96 44 60 62 24 44z" fill="rgba(126,200,227,.10)"/>
+      <path d="M60 62v34M24 44v34M96 44v34" opacity=".55"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M51 46 a9 9 0 0 1 18 0"/>
+    <path d="M46 46 a14 14 0 0 1 28 0" opacity=".7"/>
+    <circle cx="60" cy="48" r="2" fill="url(#cg)" stroke="none"/>
+  </g></svg></div><div id="svg-room"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <rect x="38" y="30" width="44" height="60" rx="8"/>
+      <rect x="46" y="40" width="28" height="24" rx="5" fill="rgba(126,200,227,.10)"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M51.9 52 a8.1 8.1 0 0 1 16.2 0"/>
+    <path d="M47.4 52 a12.6 12.6 0 0 1 25.2 0" opacity=".7"/>
+    <circle cx="60" cy="53.8" r="1.8" fill="url(#cg)" stroke="none"/>
+  </g><circle cx="60" cy="80" r="3.4" fill="url(#gg)"/></svg></div><div id="svg-sleep"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <path d="M22 70 60 54 98 70 60 86z" fill="rgba(126,200,227,.08)"/>
+      <path d="M22 70v8l38 16 38-16v-8"/>
+    </g>
+    <g stroke="url(#cg)" stroke-width="2.4" fill="none" stroke-linecap="round">
+      <path d="M66 40a11 11 0 1 1-11-13 8 8 0 0 0 11 13z"/>
+    </g>
+    <g fill="url(#gg)" font-family="serif"><text x="74" y="34" font-size="10">z</text><text x="82" y="27" font-size="7">z</text></g></svg></div><div id="svg-band"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="3" fill="none">
+      <ellipse cx="60" cy="60" rx="30" ry="34"/>
+      <ellipse cx="60" cy="60" rx="30" ry="34" transform="rotate(0 60 60)" opacity=".0"/>
+      <rect x="44" y="44" width="32" height="32" rx="10" fill="rgba(126,200,227,.10)"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M52.8 60 a7.2 7.2 0 0 1 14.4 0"/>
+    <path d="M48.8 60 a11.200000000000001 11.200000000000001 0 0 1 22.400000000000002 0" opacity=".7"/>
+    <circle cx="60" cy="61.6" r="1.6" fill="url(#cg)" stroke="none"/>
+  </g></svg></div><div id="svg-bandxl"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="3.2" fill="none">
+      <ellipse cx="60" cy="60" rx="28" ry="36"/>
+      <rect x="40" y="42" width="40" height="36" rx="12" fill="rgba(126,200,227,.12)"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M51.45 60 a8.549999999999999 8.549999999999999 0 0 1 17.099999999999998 0"/>
+    <path d="M46.7 60 a13.299999999999999 13.299999999999999 0 0 1 26.599999999999998 0" opacity=".7"/>
+    <circle cx="60" cy="61.9" r="1.9" fill="url(#cg)" stroke="none"/>
+  </g><path d="M40 60h-6M86 60h-6" stroke="url(#gg)" stroke-width="3" stroke-linecap="round"/></svg></div><div id="svg-card"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <rect x="26" y="34" width="68" height="46" rx="8" fill="rgba(126,200,227,.08)"/>
+      <path d="M26 48h68" opacity=".6"/>
+      <rect x="34" y="58" width="16" height="12" rx="3" fill="url(#gg)" opacity=".7" stroke="none"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M67.7 64 a6.3 6.3 0 0 1 12.6 0"/>
+    <path d="M64.2 64 a9.799999999999999 9.799999999999999 0 0 1 19.599999999999998 0" opacity=".7"/>
+    <circle cx="74" cy="65.4" r="1.4" fill="url(#cg)" stroke="none"/>
+  </g></svg></div><div id="svg-phone"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <rect x="40" y="24" width="40" height="72" rx="10" fill="rgba(126,200,227,.08)"/>
+      <path d="M52 30h16" stroke-linecap="round"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M52.8 58 a7.2 7.2 0 0 1 14.4 0"/>
+    <path d="M48.8 58 a11.200000000000001 11.200000000000001 0 0 1 22.400000000000002 0" opacity=".7"/>
+    <circle cx="60" cy="59.6" r="1.6" fill="url(#cg)" stroke="none"/>
+  </g><circle cx="60" cy="88" r="3" fill="url(#gg)"/></svg></div><div id="svg-iphone"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <rect x="40" y="24" width="40" height="72" rx="11" fill="rgba(126,200,227,.08)"/>
+    </g>
+    <circle cx="60" cy="58" r="15" stroke="url(#cg)" stroke-width="2.6" fill="none" stroke-dasharray="4 4"/>
+    <circle cx="60" cy="58" r="6" fill="url(#gg)"/></svg></div><div id="svg-laptop"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <path d="M34 40h52v30H34z" fill="rgba(126,200,227,.08)"/>
+      <path d="M26 84h68l-6-14H32z"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M53.7 54 a6.3 6.3 0 0 1 12.6 0"/>
+    <path d="M50.2 54 a9.799999999999999 9.799999999999999 0 0 1 19.599999999999998 0" opacity=".7"/>
+    <circle cx="60" cy="55.4" r="1.4" fill="url(#cg)" stroke="none"/>
+  </g></svg></div><div id="svg-router"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <rect x="30" y="58" width="60" height="26" rx="7" fill="rgba(126,200,227,.08)"/>
+      <path d="M44 58v-6M60 58v-10M76 58v-6" stroke-linecap="round"/>
+      <circle cx="44" cy="52" r="2.4" fill="url(#gg)"/><circle cx="60" cy="48" r="2.4" fill="url(#gg)"/><circle cx="76" cy="52" r="2.4" fill="url(#gg)"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M54.6 74 a5.3999999999999995 5.3999999999999995 0 0 1 10.799999999999999 0"/>
+    <path d="M51.6 74 a8.4 8.4 0 0 1 16.8 0" opacity=".7"/>
+    <circle cx="60" cy="75.2" r="1.2" fill="url(#cg)" stroke="none"/>
+  </g></svg></div><div id="svg-armor"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <path d="M60 24l26 10v22c0 20-14 32-26 38-12-6-26-18-26-38V34z" fill="rgba(126,200,227,.08)"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M52.8 56 a7.2 7.2 0 0 1 14.4 0"/>
+    <path d="M48.8 56 a11.200000000000001 11.200000000000001 0 0 1 22.400000000000002 0" opacity=".7"/>
+    <circle cx="60" cy="57.6" r="1.6" fill="url(#cg)" stroke="none"/>
+  </g><path d="M50 60l7 7 14-16" stroke="url(#gg)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><div id="svg-car"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.6" stroke-linejoin="round">
+      <path d="M28 70l6-16c1-3 4-5 7-5h38c3 0 6 2 7 5l6 16v12H28z" fill="rgba(126,200,227,.08)"/>
+      <circle cx="42" cy="82" r="6"/><circle cx="78" cy="82" r="6"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M53.7 58 a6.3 6.3 0 0 1 12.6 0"/>
+    <path d="M50.2 58 a9.799999999999999 9.799999999999999 0 0 1 19.599999999999998 0" opacity=".7"/>
+    <circle cx="60" cy="59.4" r="1.4" fill="url(#cg)" stroke="none"/>
+  </g></svg></div><div id="svg-bundle"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.4" stroke-linejoin="round">
+      <path d="M60 24 90 39v22L60 76 30 61V39z" fill="rgba(126,200,227,.10)"/>
+      <path d="M60 24 90 39 60 54 30 39z"/>
+      <ellipse cx="44" cy="90" rx="12" ry="8" fill="rgba(126,200,227,.06)"/>
+      <rect x="66" y="82" width="22" height="16" rx="4" fill="rgba(126,200,227,.06)"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M52.8 40 a7.2 7.2 0 0 1 14.4 0"/>
+    <path d="M48.8 40 a11.200000000000001 11.200000000000001 0 0 1 22.400000000000002 0" opacity=".7"/>
+    <circle cx="60" cy="41.6" r="1.6" fill="url(#cg)" stroke="none"/>
+  </g></svg></div><div id="svg-face"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="2.8" fill="none">
+      <rect x="40" y="40" width="40" height="40" rx="12" fill="rgba(126,200,227,.10)"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M51.9 60 a8.1 8.1 0 0 1 16.2 0"/>
+    <path d="M47.4 60 a12.6 12.6 0 0 1 25.2 0" opacity=".7"/>
+    <circle cx="60" cy="61.8" r="1.8" fill="url(#cg)" stroke="none"/>
+  </g></svg></div><div id="svg-silicone"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M46 26c-8 14-8 54 0 68M74 26c8 14 8 54 0 68"/>
+      <rect x="44" y="48" width="32" height="24" rx="8" fill="rgba(126,200,227,.10)"/>
+    </g></svg></div><div id="svg-nylon"><svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><defs>
+  <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3E93B8"/><stop offset="1" stop-color="#266F8C"/>
+  </linearGradient>
+  <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#E4C06A"/><stop offset=".5" stop-color="#C0972F"/><stop offset="1" stop-color="#9E7C24"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="42%" r="55%">
+    <stop offset="0" stop-color="#6FB8D4" stop-opacity=".55"/><stop offset="1" stop-color="#6FB8D4" stop-opacity="0"/>
+  </radialGradient>
+</defs><circle cx="60" cy="54" r="46" fill="url(#glow)"/>
+    <g stroke="url(#gg)" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M40 30h40v14H40zM40 76h40v14H40z"/>
+      <rect x="46" y="46" width="28" height="28" rx="8" fill="rgba(126,200,227,.10)"/>
+      <path d="M44 33h32M44 87h32" stroke-width="1.4" opacity=".5"/>
+    </g>
+  <g stroke="url(#cg)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".95">
+    <path d="M53.7 60 a6.3 6.3 0 0 1 12.6 0"/>
+    <path d="M50.2 60 a9.799999999999999 9.799999999999999 0 0 1 19.599999999999998 0" opacity=".7"/>
+    <circle cx="60" cy="61.4" r="1.4" fill="url(#cg)" stroke="none"/>
+  </g></svg></div></div>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/checkout.js" defer></script>
+</body>
+</html>
