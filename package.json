@@ -1,0 +1,17 @@
+{
+  "name": "calmingthechaos",
+  "private": true,
+  "type": "module",
+  "description": "Calming The Chaos static site + Netlify Functions for PayPal checkout",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "catalog": "node scripts/sync-catalog.mjs",
+    "catalog:check": "node scripts/sync-catalog.mjs --check"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.9"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "currency": "USD",
+  "products": {
+    "armored-upgrade": {
+      "name": "Armored Upgrade",
+      "icon": "armor",
+      "priceCents": 12495,
+      "url": "/products/armored-upgrade.html"
+    },
+    "bare-minimum": {
+      "name": "Bare Minimum",
+      "icon": "bundle",
+      "priceCents": 29985,
+      "url": "/products/bare-minimum.html"
+    },
+    "better-zzzs": {
+      "name": "Better ZZZ’s",
+      "icon": "sleep",
+      "priceCents": 4795,
+      "url": "/products/better-zzzs.html"
+    },
+    "booster-box": {
+      "name": "Booster Box",
+      "icon": "box",
+      "priceCents": 28495,
+      "url": "/products/booster-box.html"
+    },
+    "car-harmonizer": {
+      "name": "Car Harmonizer",
+      "icon": "car",
+      "priceCents": 7495,
+      "url": "/products/car-harmonizer.html"
+    },
+    "cell-chip-ultra": {
+      "name": "Cell Chip Ultra",
+      "icon": "phone",
+      "priceCents": 8995,
+      "url": "/products/cell-chip-ultra.html"
+    },
+    "device-chip": {
+      "name": "Device Chip",
+      "icon": "router",
+      "priceCents": 3995,
+      "url": "/products/device-chip.html"
+    },
+    "emf-band-xl": {
+      "name": "EMF Band XL",
+      "icon": "bandxl",
+      "priceCents": 6995,
+      "url": "/products/emf-band-xl.html"
+    },
+    "emf-band": {
+      "name": "EMF Band",
+      "icon": "band",
+      "priceCents": 4995,
+      "url": "/products/emf-band.html"
+    },
+    "home-bundle": {
+      "name": "Home Bundle",
+      "icon": "bundle",
+      "priceCents": 62485,
+      "url": "/products/home-bundle.html"
+    },
+    "home-harmonizer": {
+      "name": "Home Harmonizer",
+      "icon": "box",
+      "priceCents": 54995,
+      "url": "/products/home-harmonizer.html"
+    },
+    "icell-ultra": {
+      "name": "iCell Ultra",
+      "icon": "iphone",
+      "priceCents": 8995,
+      "url": "/products/icell-ultra.html"
+    },
+    "laptop-chip-ultra": {
+      "name": "Laptop Chip Ultra",
+      "icon": "laptop",
+      "priceCents": 8995,
+      "url": "/products/laptop-chip-ultra.html"
+    },
+    "personal-card-ultra": {
+      "name": "Personal Card Ultra",
+      "icon": "card",
+      "priceCents": 8995,
+      "url": "/products/personal-card-ultra.html"
+    },
+    "room-harmonizer": {
+      "name": "Room Harmonizer",
+      "icon": "room",
+      "priceCents": 14995,
+      "url": "/products/room-harmonizer.html"
+    },
+    "xl-band-alternative-nylon-band": {
+      "name": "XL Band — Nylon Strap",
+      "icon": "nylon",
+      "priceCents": 999,
+      "url": "/products/xl-band-alternative-nylon-band.html"
+    },
+    "xl-band-face-replacement": {
+      "name": "XL Band Face Replacement",
+      "icon": "face",
+      "priceCents": 699,
+      "url": "/products/xl-band-face-replacement.html"
+    },
+    "xl-band-replacement-silicone-band": {
+      "name": "XL Band — Silicone Strap",
+      "icon": "silicone",
+      "priceCents": 699,
+      "url": "/products/xl-band-replacement-silicone-band.html"
+    }
+  }
+}

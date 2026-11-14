@@ -614,3 +614,7 @@ section[id]{scroll-margin-top:118px}
   .field-rings::after{animation:none;opacity:0}
   .contact-strip a:hover,.contact-strip a:active{transform:none}
 }
+
+/* checkout entry in the cart drawer */
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none;box-shadow:none}
+.drawer-note a{color:var(--blue-2);text-decoration:underline;text-underline-offset:2px}
